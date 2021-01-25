@@ -1,0 +1,47 @@
+<html>
+<head>
+<TITLE>URM Stamping</TITLE>
+<meta http-equiv="refresh" content="60" ><!-- reload page after every 60 sec-->
+<script>
+function close_form()
+{
+window.close();
+}
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<div id="st" style="position:absolute; width:563px; height:89px; z-index:1;max-height: 60vh;overflow-y:auto;display:block;top: 23px; left: 359px;">
+<table border=1 cellspacing='1' cellpadding='0' width='100%' align="center" >
+<thead>
+<tr>
+<th colspan="3" align="center">HOT STAMPING MACHINE</th>
+</tr>
+<tr >
+<th width="70%" align="center" >HEAT NO</th>
+<th width="10%" align="center" > STRAND</th>
+<th width="20%" align="center"> CC/CO</th>
+</tr>
+</thead>
+<tbody>
+<tr ><td width='70%' align='center' id="heat_id">C018317</td><td width='10%' align='center' >2</td><td width='20%' align='center'>C</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<script>
+    setInterval(()=>{
+        var heat_id = document.getElementById('heat_id').textContent;
+        console.log(heat_id);
+        var first_char = heat_id.slice(0,1);
+        var rest_char  = heat_id.slice(1,);
+        if (first_char=='B') {first_char = 'C'}
+        else {first_char = 'B'}
+
+        document.getElementById('heat_id').textContent = first_char+rest_char;
+    }, 60000) 
+
+</script>
+</body>
+</html>
