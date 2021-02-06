@@ -1,47 +1,84 @@
+
 <html>
-<head>
-<TITLE>URM Stamping</TITLE>
-<meta http-equiv="refresh" content="60" ><!-- reload page after every 60 sec-->
-<script>
-function close_form()
-{
-window.close();
-}
-</script>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body>
-<div id="st" style="position:absolute; width:563px; height:89px; z-index:1;max-height: 60vh;overflow-y:auto;display:block;top: 23px; left: 359px;">
-<table border=1 cellspacing='1' cellpadding='0' width='100%' align="center" >
-<thead>
-<tr>
-<th colspan="3" align="center">HOT STAMPING MACHINE</th>
-</tr>
-<tr >
-<th width="70%" align="center" >HEAT NO</th>
-<th width="10%" align="center" > STRAND</th>
-<th width="20%" align="center"> CC/CO</th>
-</tr>
-</thead>
-<tbody>
-<tr ><td width='70%' align='center' id="heat_id">C018317</td><td width='10%' align='center' >2</td><td width='20%' align='center'>C</td></tr>
-</tbody>
-</table>
-</div>
-</div>
-<script>
-    setInterval(()=>{
-        var heat_id = document.getElementById('heat_id').textContent;
-        console.log(heat_id);
-        var first_char = heat_id.slice(0,1);
-        var rest_char  = heat_id.slice(1,);
-        if (first_char=='B') {first_char = 'C'}
-        else {first_char = 'B'}
-
-        document.getElementById('heat_id').textContent = first_char+rest_char;
-    }, 50000) 
-
-</script>
-</body>
+   <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <!-- : activecalls.html,v 1.20 2009/09/28 15:43:19 rparker Exp  -->
+   <head>
+      <script language="JavaScript" src="/admin/help/helpFiles.js"></script>
+      <script language="JavaScript">
+         <!-- Begin
+         function setRefresh() {
+              if (30 >0) {
+         	setTimeout( "location.replace('/cgi-bin/activecalls.cgi?refresh_rate_30=\"Refresh every 30 seconds\"')", 30000 );
+              }
+              document.activecalls.refresh_rate_30.style.backgroundColor="#CCFFCC";
+              document.activecalls.refresh_rate_30.style.border="2px solid blue";
+              document.getElementById('loading').style.display='none';
+         }
+         
+         function monitor(callid) {
+         	//window.open('/cgi-bin/call_monitor.cgi?callid=' + callid,"_blank","location=no,menubar=no,status=yes,toolbar=no,resizable=yes,height=200,width=550");
+                 var url = "/cgi-bin/activecalls.cgi?callid=" + callid +"&trace=1";
+         	window.open(url,"_blank","location=no,menubar=no,status=yes,toolbar=no,resizable=yes,height=200,width=550");
+         }
+         // End -->
+      </script>
+   </head>
+   <link rel="StyleSheet" href="/admin/style.css" type="text/css">
+   <body class="usual" onLoad="setRefresh();">
+      <form action="/cgi-bin/activecalls.cgi" method="post" name="activecalls">
+         <div id="loading">
+            Loading...
+         </div>
+         <table class="usual" align="center" cellpadding="8" cellspacing="1">
+            <tr>
+               <td><input name="refresh_rate_0" type="submit" value="Refresh Once"></td>
+               <td><input name="refresh_rate_30" type="submit" value="Refresh every 30 seconds"></td>
+               <td><input name="refresh_rate_60" type="submit" value="Refresh every 60 seconds"></td>
+               <td><input name="refresh_rate_90" type="submit" value="Refresh every 90 seconds"></td>
+            </tr>
+         </table>
+         <BR>
+         <table width="100%" class="usual" align="left" border="1" cellpadding="1" cellspacing="1">
+            <tr>
+               <td class="black" align="center" colspan="2">
+                  <table class="usual" cellspacing="0" cellpadding="0" style="width: 100%; border:0px;">
+                     <tr>
+                        <td class="black" width="25%"></td>
+                        <td class="black" width="50%" align="center">cgmelectrical@sail.com (DEFAULT)&nbsp;&nbsp;<br>ID: 13313947689494conferenceserver2&nbsp;&nbsp;Vanity: 0212121</td>
+                        <td class="black" width="25%" align="right" style="padding-right: 14px; cursor:pointer; cursor:hand" onclick="openHelpWindow('monitoring/active_calls.html');">Help</td>
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  Reservationless, expires Wed Mar  6  2030, Leader Required
+                  <br>Subject: CGM Electrical
+               </td>
+               <td align="center" valign="middle">
+                  <a href="/cgi-bin/activecalls.cgi?callid=13313947689494conferenceserver2&terminate=1">End Call</a>
+                  &nbsp;&nbsp;
+                  <!--	<a href="/cgi-bin/activecalls.cgi?callid=13313947689494conferenceserver2&trace=1">Collect call quality data</a> -->
+                  <a href="javascript:monitor('13313947689494conferenceserver2');" title="Collect 1 minute of voice quality data from this call and then download it.  This call must remain up for at least one more minute.  After the download is complete,  please refresh the screen by pressing one of the refresh buttons on the top of the page.">Collect call quality data</a>
+               </td>
+            </tr>
+            <tr>
+               <td class="header">Participants</td>
+               <td class="header">Up For</td>
+            </tr>
+            <tr>
+               <td>&nbsp;69649 (sip:69649@10.253.251.50) CallByPhone-URL</td>
+               <td align="center">00:03:14&nbsp;&nbsp;<a href="/cgi-bin/activecalls.cgi?callid=13313947689494conferenceserver2&legno=1">Drop Leg</a></td>
+            </tr>
+            <tr>
+               <td>&nbsp;Recording by cgmelectrical@sail.com (CGM Electrical) CallByPhone</td>
+               <td align="center">00:03:14&nbsp;&nbsp;<a href="/cgi-bin/activecalls.cgi?callid=13313947689494conferenceserver2&legno=2">Drop Leg</a></td>
+            </tr>
+            <tr>
+               <td>&nbsp;9874476596 (sip:9874476596@10.253.251.50) CallByPhone-URL</td>
+               <td align="center">00:00:25&nbsp;&nbsp;<a href="/cgi-bin/activecalls.cgi?callid=13313947689494conferenceserver2&legno=3">Drop Leg</a></td>
+            </tr>
+         </table>
+      </form>
+   </body>
 </html>
